@@ -4,6 +4,14 @@ module "resource_group_name" {
     location = "westeurope"
   
 }
+
+module "resource_group_name1" {
+    source = "../../modules/resource-group"
+    resource_group = "rg_Ashish"
+    location = "westus"
+  
+}
+
 module "azurerm_virtual_network" {
     depends_on = [ module.resource_group_name ]
     source = "../../modules/Azurerm_vnet"
